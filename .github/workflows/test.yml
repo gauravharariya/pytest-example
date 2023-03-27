@@ -17,6 +17,7 @@ on:
 
 jobs:
   build:
+    name: test
     runs-on: ubuntu-latest
     container: python:3.9
 
