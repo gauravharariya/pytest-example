@@ -1,0 +1,28 @@
+#testing
+name: Code Quality and Tests
+on:
+  pull_request:
+    branches:
+      - develop
+      - main
+      - release/v*
+      - hotfix/v*
+  push:
+    branches:
+      - develop
+      - master
+      - release/v*
+      - hotfix/v*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: python:3.9
+
+    steps:
+      - name: Checkout Branch
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: |
+          exit 1
