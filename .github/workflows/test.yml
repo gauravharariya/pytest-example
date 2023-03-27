@@ -27,3 +27,10 @@ jobs:
       - name: Install Dependencies
         run: |
           exit 1
+          
+      - name: Update status of branch
+        if: always()
+        uses: Sibz/github-status-action@v1
+        with:
+          authToken: ${{secrets.GITHUB_TOKEN}}
+          state: ${{ job.status }}
