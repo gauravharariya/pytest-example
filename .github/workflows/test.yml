@@ -1,4 +1,4 @@
-#testing
+#testing123
 name: Code Quality and Tests
 on:
   pull_request:
@@ -17,6 +17,7 @@ on:
 
 jobs:
   build:
+    name: Code Quality and Tests
     runs-on: ubuntu-latest
     container: python:3.9
 
@@ -27,3 +28,10 @@ jobs:
       - name: Install Dependencies
         run: |
           exit 1
+          
+      - name: Update status of branch
+        if: always()
+        uses: Sibz/github-status-action@v1
+        with:
+          authToken: ${{secrets.GITHUB_TOKEN}}
+          state: ${{ job.status }}
