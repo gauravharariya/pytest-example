@@ -1,5 +1,5 @@
 #testing
-name: test
+name: Code Quality and Tests
 on:
   pull_request:
     branches:
@@ -17,7 +17,7 @@ on:
 
 jobs:
   build:
-    name: test
+    name: Code Quality and Tests
     runs-on: ubuntu-latest
     container: python:3.9
 
